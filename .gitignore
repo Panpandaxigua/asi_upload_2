@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# PyInstaller build output (built by GitHub Actions)
+build/
+dist/
+
+# OS junk
+.DS_Store
+Thumbs.db

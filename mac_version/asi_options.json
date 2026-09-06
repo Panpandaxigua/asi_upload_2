@@ -1,0 +1,1135 @@
+{
+  "product_type": {
+    "label": "Product Type",
+    "description": "ASI platform product type dropdown options",
+    "excel_column": "Product_Type",
+    "options": [
+      "Apparel & Outerwear",
+      "Automotive Accessories",
+      "Awards & Trophies",
+      "Baby, Toddler, & Child Items",
+      "Bags & Luggage",
+      "Caps & Hats",
+      "Drinkware",
+      "Electronics & Tech Products",
+      "Equipment and Business Services",
+      "Food, Beverage, & Tobacco",
+      "Health, Beauty & Wellness",
+      "Holiday & Religious Items",
+      "Home & Garden",
+      "Jewelry and Accessories",
+      "Key Chains",
+      "Kitchen & Dining",
+      "Lanyards, Badges, & Badge Holders",
+      "Magnets & Buttons, Stickers & Decals",
+      "Party Supplies",
+      "Pet Supplies",
+      "Publications",
+      "School, Office, & Craft Supplies",
+      "Signs, Banners, Flags, & Displays",
+      "Sports, Fitness, & Outdoors",
+      "Storage & Organization",
+      "Tools & Hardware",
+      "Toys, Games, & Novelties",
+      "Writing Instruments",
+      "Other"
+    ]
+  },
+  "product_theme": {
+    "label": "Product Theme",
+    "description": "ASI platform product theme token-input options",
+    "excel_column": "Theme",
+    "options": [
+      "Academic",
+      "Adult",
+      "Animal",
+      "Anniversary",
+      "Aromatherapy & Relaxation",
+      "Auto Racing",
+      "Automotive",
+      "Aviation",
+      "Award Programs",
+      "Baby",
+      "Back To School",
+      "Baseball",
+      "Basketball",
+      "Beach",
+      "Beauty",
+      "Bereavement",
+      "Bicycling",
+      "Biodegradable",
+      "Birthday",
+      "Bowling",
+      "Boxing",
+      "Breast Cancer",
+      "Camping",
+      "Casino",
+      "Celestial",
+      "Chanukah",
+      "Cheerleading",
+      "Christmas",
+      "Collegiate",
+      "Communications",
+      "Company Picnic",
+      "Computer",
+      "Construction",
+      "Corporate",
+      "Cultural",
+      "Dental",
+      "Direct-Mail",
+      "Drugs",
+      "Easter",
+      "Eco & Environmentally Friendly",
+      "Education",
+      "Elections",
+      "Employee Recognition",
+      "Entertainment",
+      "Equestrian",
+      "Father's Day",
+      "Finance",
+      "FireFighters",
+      "Fishing",
+      "Food",
+      "Football",
+      "Gambling",
+      "Gardening",
+      "Global",
+      "Golf",
+      "Graduation",
+      "Grand Opening",
+      "Gymnastics",
+      "Halloween",
+      "Hawaiian",
+      "Health & Fitness",
+      "Healthcare",
+      "Hockey",
+      "Holidays",
+      "Hunting",
+      "Judicial",
+      "July 4th",
+      "Karate",
+      "Labor Day",
+      "Lacrosse",
+      "Love",
+      "Martial Arts",
+      "Medical",
+      "Military",
+      "Mother's Day",
+      "Music",
+      "Mythical",
+      "Native Americans",
+      "Nautical",
+      "New Year",
+      "Non-Profit",
+      "Number One",
+      "Organic",
+      "Organizations",
+      "PPE Personal Protective Equipment",
+      "Patriotic",
+      "Performing Arts",
+      "Pharmaceutical",
+      "Physically Challenged",
+      "Police",
+      "Political",
+      "Prehistoric",
+      "Racquetball",
+      "Railroad",
+      "Real Estate",
+      "Recycled",
+      "Religious",
+      "Retirement",
+      "Romance",
+      "Safety",
+      "Sailing",
+      "Seasons",
+      "Seminars",
+      "Skating",
+      "Skiing",
+      "Soccer",
+      "Social Distancing",
+      "Softball",
+      "Spa",
+      "Space Exploration",
+      "Sports",
+      "St. Patrick's Day",
+      "Substance Abuse Awareness",
+      "Sustainable",
+      "Swimming",
+      "Tennis",
+      "Thank You",
+      "Thanksgiving",
+      "Track and Field",
+      "Trade Show",
+      "Transportation",
+      "Travel",
+      "USA",
+      "Vacations",
+      "Valentine's Day",
+      "Violence",
+      "Volleyball",
+      "Wedding",
+      "Wellness",
+      "Western",
+      "Wilderness",
+      "Wrestling",
+      "Zodiac"
+    ]
+  },
+  "country": {
+    "label": "Country",
+    "description": "Shared country options for Manufactured In, Assembled In, Decorated In",
+    "options": [
+      "U.S.A.",
+      "CANADA",
+      "CHINA",
+      "MEXICO",
+      "AFGHANISTAN",
+      "AFRICA",
+      "ALAND ISLANDS",
+      "ALBANIA",
+      "ALGERIA",
+      "AMERICAN SAMOA",
+      "ANDORRA",
+      "ANGOLA",
+      "ANGUILLA",
+      "ANTARCTICA",
+      "ANTIGUA AND BARBUDA",
+      "ARGENTINA",
+      "ARMENIA",
+      "ARUBA",
+      "ASIA",
+      "AUSTRALIA",
+      "AUSTRIA",
+      "AZERBAIJAN",
+      "BAHAMAS",
+      "BAHRAIN",
+      "BANGLADESH",
+      "BARBADOS",
+      "BELARUS",
+      "BELGIUM",
+      "BELIZE",
+      "BENIN",
+      "BERMUDA",
+      "BHUTAN",
+      "BOLIVIA",
+      "BONAIRE",
+      "BOSNIA AND HERZEGOVINA",
+      "BOTSWANA",
+      "BOUVET ISLAND",
+      "BRAZIL",
+      "BRITISH INDIAN OCEAN TERRITORY",
+      "BRUNEI DARUSSALAM",
+      "BULGARIA",
+      "BURKINA FASO",
+      "BURUNDI",
+      "CAMBODIA",
+      "CAMEROON",
+      "CAPE VERDE",
+      "CAYMAN ISLANDS",
+      "CENTRAL AFRICAN REPUBLIC",
+      "CHAD",
+      "CHILE",
+      "CHRISTMAS ISLAND",
+      "COCOS (KEELING) ISLANDS",
+      "COLOMBIA",
+      "COMOROS",
+      "CONGO",
+      "COOK ISLANDS",
+      "COSTA RICA",
+      "COTE D IVOIRE",
+      "CROATIA",
+      "CUBA",
+      "CURACAO",
+      "CYPRUS",
+      "CZECH REPUBLIC",
+      "DENMARK",
+      "DJIBOUTI",
+      "DOMINICA",
+      "DOMINICAN REPUBLIC",
+      "ECUADOR",
+      "EGYPT",
+      "EL SALVADOR",
+      "EQUATORIAL GUINEA",
+      "ERITREA",
+      "ESTONIA",
+      "ETHIOPIA",
+      "EUROPE",
+      "FALKLAND ISLANDS (MALVINAS)",
+      "FAROE ISLANDS",
+      "FIJI",
+      "FINLAND",
+      "FRANCE",
+      "FRENCH GUIANA",
+      "FRENCH POLYNESIA",
+      "FRENCH SOUTHERN TERRITORIES",
+      "GABON",
+      "GAMBIA",
+      "GEORGIA",
+      "GERMANY",
+      "GHANA",
+      "GIBRALTAR",
+      "GREECE",
+      "GREENLAND",
+      "GRENADA",
+      "GUADELOUPE",
+      "GUAM",
+      "GUATEMALA",
+      "GUERNSEY",
+      "GUINEA",
+      "GUINEA-BISSAU",
+      "GUYANA",
+      "HAITI",
+      "HEARD ISLAND AND MCDONALD ISLANDS",
+      "HOLY SEE (VATICAN CITY STATE)",
+      "HONDURAS",
+      "HONG KONG",
+      "HUNGARY",
+      "ICELAND",
+      "INDIA",
+      "INDONESIA",
+      "IRAN",
+      "IRAQ",
+      "IRELAND",
+      "ISLE OF MAN",
+      "ISRAEL",
+      "ITALY",
+      "JAMAICA",
+      "JAPAN",
+      "JERSEY",
+      "JORDAN",
+      "KAZAKHSTAN",
+      "KENYA",
+      "KIRIBATI",
+      "KOREA",
+      "KUWAIT",
+      "KYRGYZSTAN",
+      "LAO PEOPLE'S DEMOCRATIC REPUBLIC",
+      "LATVIA",
+      "LEBANON",
+      "LESOTHO",
+      "LIBERIA",
+      "LIBYA",
+      "LIECHTENSTEIN",
+      "LITHUANIA",
+      "LUXEMBOURG",
+      "MACAO",
+      "MACEDONIA",
+      "MADAGASCAR",
+      "MALAWI",
+      "MALAYSIA",
+      "MALDIVES",
+      "MALI",
+      "MALTA",
+      "MARSHALL ISLANDS",
+      "MARTINIQUE",
+      "MAURITANIA",
+      "MAURITIUS",
+      "MAYOTTE",
+      "MICRONESIA",
+      "MOLDOVA",
+      "MONACO",
+      "MONGOLIA",
+      "MONTENEGRO",
+      "MONTSERRAT",
+      "MOROCCO",
+      "MOZAMBIQUE",
+      "MYANMAR",
+      "NAMIBIA",
+      "NAURU",
+      "NEPAL",
+      "NETHERLANDS",
+      "NEW CALEDONIA",
+      "NEW ZEALAND",
+      "NICARAGUA",
+      "NIGER",
+      "NIGERIA",
+      "NIUE",
+      "NORFOLK ISLAND",
+      "NORTH AMERICA",
+      "NORTHERN MARIANA ISLANDS",
+      "NORWAY",
+      "OMAN",
+      "PAKISTAN",
+      "PALAU",
+      "PALESTINIAN TERRITORY",
+      "PANAMA",
+      "PAPUA NEW GUINEA",
+      "PARAGUAY",
+      "PERU",
+      "PHILIPPINES",
+      "PITCAIRN",
+      "POLAND",
+      "PORTUGAL",
+      "PUERTO RICO",
+      "QATAR",
+      "REUNION",
+      "ROMANIA",
+      "RUSSIAN FEDERATION",
+      "RWANDA",
+      "SAINT BARTHELEMY",
+      "SAINT HELENA",
+      "SAINT KITTS AND NEVIS",
+      "SAINT LUCIA",
+      "SAINT MARTIN (FRENCH PART)",
+      "SAINT PIERRE AND MIQUELON",
+      "SAINT VINCENT AND THE GRENADINES",
+      "SAMOA",
+      "SAN MARINO",
+      "SAO TOME AND PRINCIPE",
+      "SAUDI ARABIA",
+      "SENEGAL",
+      "SERBIA",
+      "SEYCHELLES",
+      "SIERRA LEONE",
+      "SINGAPORE",
+      "SINT MAARTEN (DUTCH PART)",
+      "SLOVAKIA",
+      "SLOVENIA",
+      "SOLOMON ISLANDS",
+      "SOMALIA",
+      "SOUTH AFRICA",
+      "SOUTH AMERICA",
+      "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS",
+      "SOUTH KOREA",
+      "SOUTH SUDAN",
+      "SPAIN",
+      "SRI LANKA",
+      "SUDAN",
+      "SURINAME",
+      "SVALBARD AND JAN MAYEN",
+      "SWAZILAND",
+      "SWEDEN",
+      "SWITZERLAND",
+      "SYRIAN ARAB REPUBLIC",
+      "TAIWAN",
+      "TAJIKISTAN",
+      "TANZANIA",
+      "THAILAND",
+      "TIMOR-LESTE",
+      "TOGO",
+      "TOKELAU",
+      "TONGA",
+      "TRINIDAD AND TOBAGO",
+      "TUNISIA",
+      "TURKEY",
+      "TURKMENISTAN",
+      "TURKS AND CAICOS ISLANDS",
+      "TUVALU",
+      "UGANDA",
+      "UKRAINE",
+      "UNITED ARAB EMIRATES",
+      "UNITED KINGDOM",
+      "UNITED STATES MINOR OUTLYING ISLANDS",
+      "URUGUAY",
+      "UZBEKISTAN",
+      "VANUATU",
+      "VENEZUELA",
+      "VIETNAM",
+      "VIRGIN ISLANDS",
+      "WALLIS AND FUTUNA",
+      "WESTERN SAHARA",
+      "YEMEN",
+      "ZAMBIA",
+      "ZIMBABWE"
+    ],
+    "excel_columns": [
+      "Manufactured In",
+      "Assembled In",
+      "Decorated In"
+    ]
+  },
+  "item_packaging": {
+    "label": "Item Packaging",
+    "multi": true,
+    "description": "ASI platform shipping item packaging options (multi-select)",
+    "options": [
+      "Banding",
+      "Box",
+      "Bubble Type Packaging",
+      "Bulk",
+      "Case",
+      "Cello Type Packaging",
+      "Gift Bag",
+      "Gift Boxes",
+      "Gift Wrapped",
+      "Individual Poly Bag",
+      "Mailer",
+      "Poly Bag",
+      "Pouch",
+      "Shrink Wrap",
+      "Special/Custom Packaging",
+      "Tuck Box"
+    ],
+    "excel_column": "Item Packaging"
+  },
+  "product_color": {
+    "label": "Product Color",
+    "multi": true,
+    "description": "ASI platform product color options (multi-select token-input)",
+    "options": [
+      "Assorted",
+      "Black",
+      "Blue",
+      "Brown",
+      "Clear",
+      "Gray",
+      "Green",
+      "Aluminum",
+      "Brass",
+      "Bronze",
+      "Chrome",
+      "Copper",
+      "Gold",
+      "Nickel",
+      "Pewter",
+      "Platinum",
+      "Silver",
+      "Titanium",
+      "Multi color",
+      "Orange",
+      "Pink",
+      "Purple",
+      "Red",
+      "White",
+      "Yellow",
+      "Any/All Colors",
+      "Custom",
+      "Other",
+      "Standard",
+      "Burgundy",
+      "Gold",
+      "Light Blue",
+      "Maroon",
+      "Navy Blue",
+      "Royal Blue",
+      "Silver",
+      "Teal"
+    ],
+    "excel_column": "Product Color"
+  },
+  "material": {
+    "label": "Material",
+    "multi": true,
+    "description": "ASI platform product material options (multi-select token-input)",
+    "options": [
+      "Fabric",
+      "Blend",
+      "Acrylic",
+      "Bamboo",
+      "Canvas",
+      "Cashmere",
+      "Cotton",
+      "Felt",
+      "Fleece",
+      "Hemp",
+      "Mesh",
+      "Microfiber Cloth",
+      "Non-Woven Fabric",
+      "Nylon",
+      "Other Fabric",
+      "Oxford",
+      "Polyester",
+      "Silk",
+      "Spandex",
+      "Wool",
+      "Foam",
+      "Foam",
+      "Glass",
+      "Crystal",
+      "Glass",
+      "Optical Glass",
+      "Other Glass",
+      "Leather",
+      "Leather",
+      "Other Leather/Suede",
+      "Suede",
+      "Metal",
+      "Alloy",
+      "Aluminum",
+      "Brass",
+      "Copper",
+      "Gold",
+      "Iron",
+      "Metal",
+      "Nickel",
+      "Other Metal",
+      "Pewter",
+      "Silver",
+      "Stainless Steel",
+      "Steel",
+      "Organic",
+      "Bone",
+      "Cork",
+      "Jute/Burlap",
+      "Other Organic Material",
+      "Plastic",
+      "ABS",
+      "Acrylic Plastic",
+      "Neoprene",
+      "Other Plastic",
+      "PET/PETE",
+      "PVC",
+      "Plastic",
+      "Polycarbonate (PC)",
+      "Polyethylene (PE)",
+      "Polypropylene",
+      "Polyurethane (PUR or PU)",
+      "Resin",
+      "Silicone",
+      "TPE",
+      "Rubber",
+      "Latex",
+      "Rubber",
+      "Stone/Ceramic",
+      "Ceramic",
+      "Gemstone",
+      "Other Stone/Ceramic",
+      "Stone",
+      "Vinyl",
+      "Vinyl",
+      "Wood/Paper",
+      "Bamboo Wood",
+      "Composite Board",
+      "Other Wood/Paper",
+      "Paper",
+      "Wood",
+      "Other",
+      "Other"
+    ],
+    "excel_column": "Material"
+  },
+  "imprint_method": {
+    "label": "Select Method",
+    "multi": true,
+    "description": "ASI platform imprint method options",
+    "options": [
+      "Debossed",
+      "Direct to Garment",
+      "Emblem",
+      "Embossed",
+      "Embroidered",
+      "Engraved",
+      "Etched",
+      "Foil Stamped",
+      "Full Color",
+      "Heat Transfer",
+      "Hot Stamped",
+      "Laser Engraved",
+      "Pad Print",
+      "Printed",
+      "Silkscreen",
+      "Sublimation",
+      "Other"
+    ],
+    "excel_column": "Select Method"
+  },
+  "price_code": {
+    "label": "Price Code",
+    "description": "ASI platform pricing code options",
+    "options": [
+      "L 70%",
+      "M 65%",
+      "N 60%",
+      "O 55%",
+      "A/P 50%",
+      "B/Q 45%",
+      "C/R 40%",
+      "D/S 35%",
+      "E/T 30%",
+      "F/U 25%",
+      "G/V 20%",
+      "H/W 15%",
+      "I/X 10%",
+      "J/Y 5%",
+      "K/Z 0%"
+    ],
+    "excel_column": "Price Code"
+  },
+  "setup_charge_code": {
+    "label": "Set-up Charge Code",
+    "description": "ASI platform set-up charge code options",
+    "options": [
+      "L 70%",
+      "M 65%",
+      "N 60%",
+      "O 55%",
+      "A/P 50%",
+      "B/Q 45%",
+      "C/R 40%",
+      "D/S 35%",
+      "E/T 30%",
+      "F/U 25%",
+      "G/V 20%",
+      "H/W 15%",
+      "I/X 10%",
+      "J/Y 5%",
+      "K/Z 0%"
+    ],
+    "excel_column": "Set-up Charge Code"
+  },
+  "validation_rules": {
+    "description_format": {
+      "label": "Description 格式",
+      "message": "Description 格式错误",
+      "rules": [
+        {
+          "message": "Description 包含中文标点符号",
+          "pattern": "^[^\\u3000-\\u303f\\uff00-\\uffef\\u2018-\\u201d\\u201c-\\u201d\\u3001\\u3002\\u2014\\uff5e\\u2026\\u00b7]*$",
+          "type": "regex"
+        },
+        {
+          "message": "Description 超过800个字符上限",
+          "value": 800,
+          "type": "max_length"
+        }
+      ],
+      "excel_columns": [
+        "Description"
+      ]
+    },
+    "summary_format": {
+      "label": "Summary Description 格式",
+      "message": "Summary Description 格式错误",
+      "rules": [
+        {
+          "message": "Summary Description 包含中文标点符号",
+          "pattern": "^[^\\u3000-\\u303f\\uff00-\\uffef\\u2018-\\u201d\\u201c-\\u201d\\u3001\\u3002\\u2014\\uff5e\\u2026\\u00b7]*$",
+          "type": "regex"
+        },
+        {
+          "message": "Summary Description 超过130个字符上限",
+          "value": 130,
+          "type": "max_length"
+        }
+      ],
+      "excel_columns": [
+        "Summary",
+        "Summary Description"
+      ]
+    },
+    "keywords_format": {
+      "label": "Keywords 格式",
+      "message": "Keywords 格式错误",
+      "rules": [
+        {
+          "message": "Keywords 超过30个词上限",
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "value": 30,
+          "type": "max_items"
+        }
+      ],
+      "excel_columns": [
+        "Keywords"
+      ]
+    },
+    "product_theme_check": {
+      "label": "Product Theme 校验",
+      "message": "Product Theme 校验失败",
+      "rules": [
+        {
+          "message": "Product Theme 不在合法选项中",
+          "options_key": "product_theme",
+          "type": "in_options",
+          "multi": true
+        },
+        {
+          "message": "Product Theme 超过5个上限",
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "value": 5,
+          "type": "max_items"
+        }
+      ],
+      "excel_columns": [
+        "Theme",
+        "Product Theme"
+      ]
+    },
+    "origin_check": {
+      "label": "产地/国家校验",
+      "message": "产地/国家校验失败",
+      "rules": [
+        {
+          "message": "国家/产地不在合法选项中",
+          "options_key": "country",
+          "type": "in_options"
+        }
+      ],
+      "excel_columns": [
+        "Manufactured In",
+        "Assembled In",
+        "Decorated In"
+      ]
+    },
+    "num_items_format": {
+      "label": "Number of Items 格式",
+      "message": "Number of Items 格式错误",
+      "rules": [
+        {
+          "message": "格式错误，应为：数字+空格+单位(Box/Case/Carton/Other)，如 30 Case",
+          "pattern": "(?i)^\\d+(\\.\\d+)?\\s+(Box|Case|Carton|Other)$",
+          "type": "regex"
+        }
+      ],
+      "excel_columns": [
+        "Number of Items"
+      ]
+    },
+    "shipping_dims_format": {
+      "label": "Shipping Dimensions 格式",
+      "message": "Shipping Dimensions 格式错误",
+      "rules": [
+        {
+          "message": "格式错误，应为：数字+空格+单位(in/cm/ft/meter/mm/yds)，如 20 in",
+          "pattern": "(?i)^\\d+(\\.\\d+)?\\s+(in|cm|ft|meter|mm|yds)$",
+          "type": "regex"
+        }
+      ],
+      "excel_columns": [
+        "Shipping Dimensions L",
+        "Shipping Dimensions W",
+        "Shipping Dimensions H"
+      ]
+    },
+    "shipping_weight_format": {
+      "label": "Shipping Weight 格式",
+      "message": "Shipping Weight 格式错误",
+      "rules": [
+        {
+          "message": "格式错误，应为：数字+空格+单位(grams/kg/oz/lbs)，如 20 lbs",
+          "pattern": "(?i)^\\d+(\\.\\d+)?\\s+(grams|kg|oz|lbs)$",
+          "type": "regex"
+        }
+      ],
+      "excel_columns": [
+        "Shipping Weight",
+        "Shipping Weight "
+      ]
+    },
+    "item_packaging_check": {
+      "label": "Item Packaging 校验",
+      "message": "Item Packaging 校验失败",
+      "rules": [
+        {
+          "multi": true,
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "message": "Item Packaging 选项不在合法范围内",
+          "options_key": "item_packaging",
+          "type": "in_options"
+        }
+      ],
+      "excel_columns": [
+        "Item Packaging"
+      ]
+    },
+    "product_color_check": {
+      "label": "Product Color 校验",
+      "message": "Product Color 校验失败",
+      "rules": [
+        {
+          "multi": true,
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "message": "Product Color 选项不在合法范围内",
+          "options_key": "product_color",
+          "type": "in_options"
+        }
+      ],
+      "excel_columns": [
+        "Product Color"
+      ]
+    },
+    "size_values_format": {
+      "label": "Size_Values 格式（依赖 Select Size）",
+      "message": "Size_Values 格式错误",
+      "rules": [
+        {
+          "cases": [
+            {
+              "message": "格式: L=12.99 in; W=5.51 in; H=19.29 in (至少一个维度)",
+              "pattern": "(?i)^\\s*(L|W|H)=\\d+(\\.\\d+)?\\s+(in|cm|ft|meter|mm|yds)(\\s*;\\s*(L|W|H)=\\d+(\\.\\d+)?\\s+(in|cm|ft|meter|mm|yds))*\\s*$",
+              "when": "Dimension(L,W,H)"
+            },
+            {
+              "message": "格式: 32 GB 或 128 MB",
+              "pattern": "(?i)^\\d+(\\.\\d+)?\\s+(GB|MB)$",
+              "when": "Capacity (GB, MB)"
+            },
+            {
+              "message": "格式: 16 oz 或 2 lb",
+              "pattern": "(?i)^\\d+(\\.\\d+)?\\s+(oz|lb)$",
+              "when": "Volume (oz,lb)"
+            },
+            {
+              "message": "格式: One Size 或 Custom: 12.99 x 5.51 x 19.29",
+              "pattern": "(?i)^(One Size|Custom:\\s*.+)$",
+              "when": "Other - (one size, custom)"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^(Standard:\\s*.+|One Size|Adjustable)$",
+              "when": "Apparel-Standard & Numbered - (S,M,L,10,12)"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^(OSFA|Standard:\\s*.+)$",
+              "when": "Apparel-Mens/Tall"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^(OSFA|Standard:\\s*.+)$",
+              "when": "Apparel-Womens/Tall"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^Standard:\\s*.+$",
+              "when": "Apparel-Boys"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^Standard:\\s*.+$",
+              "when": "Apparel-Girls"
+            },
+            {
+              "message": "格式: Standard: S, M, L, XL 或 One Size / Adjustable",
+              "pattern": "(?i)^Standard:\\s*.+$",
+              "when": "Apparel-Youth"
+            },
+            {
+              "message": "格式: 32C, 34C, 36D",
+              "pattern": "(?i)^\\d{2}[A-Z](,\\s*\\d{2}[A-Z])*$",
+              "when": "Apparel - Bra (32C)"
+            },
+            {
+              "message": "格式: A, AB",
+              "pattern": "(?i)^[A-Z]+(,\\s*[A-Z]+)*$",
+              "when": "Apparel - Hosiery/Uniform (A, AB)"
+            },
+            {
+              "message": "格式: 3 Months, 6 Months, 2T",
+              "pattern": "(?i)^\\d+\\s+\\w+(,\\s*\\d+\\s+\\w+)*$",
+              "when": "Apparel - Infant/Toddler (3 Months, 2T)"
+            },
+            {
+              "message": "格式: Neck=15; Sleeve=32/33",
+              "pattern": "(?i)^Neck=\\d+;\\s*Sleeve=\\d+(/\\d+)?$",
+              "when": "Apparel - Dress Shirts (15-15 1/2)"
+            },
+            {
+              "message": "格式: Waist=32; Inseam=32",
+              "pattern": "(?i)^Waist=\\d+;\\s*Inseam=\\d+$",
+              "when": "Apparel - Pants (32-32)"
+            }
+          ],
+          "type": "conditional",
+          "depends_on": "Select Size"
+        }
+      ],
+      "excel_columns": [
+        "Size_Values"
+      ]
+    },
+    "material_check": {
+      "label": "Material 校验",
+      "message": "Material 校验失败",
+      "rules": [],
+      "excel_columns": [
+        "Material"
+      ]
+    },
+    "imprint_method_check": {
+      "label": "Select Method 校验",
+      "message": "Select Method 校验失败",
+      "rules": [
+        {
+          "multi": true,
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "message": "Select Method 选项不在合法范围内",
+          "options_key": "imprint_method",
+          "type": "in_options"
+        }
+      ],
+      "excel_columns": [
+        "Select Method"
+      ]
+    },
+    "imprint_location_check": {
+      "label": "Imprint Location 校验",
+      "message": "Imprint Location 校验失败",
+      "rules": [
+        {
+          "multi": true,
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "message": "Imprint Location 选项不在合法范围内",
+          "options_key": "imprint_location",
+          "type": "in_options"
+        }
+      ],
+      "excel_columns": [
+        "Imprint Location"
+      ]
+    },
+    "artwork_check": {
+      "label": "Artwork Information 校验",
+      "message": "Artwork Information 校验失败",
+      "rules": [
+        {
+          "message": "格式: 1:free,2,3,4:free",
+          "pattern": "^[1-4](:.*?)?(\\s*,\\s*[1-4](:.*?)?)*$",
+          "type": "regex"
+        }
+      ],
+      "excel_columns": [
+        "Artwork Information"
+      ]
+    },
+    "qp_numeric_format": {
+      "label": "Q/P 数量/价格格式",
+      "message": "Q/P 列格式错误",
+      "rules": [
+        {
+          "message": "价格/数量格式错误，小数点用 . 不能用 , 如 7.4 不能写 7,4",
+          "pattern": "^\\d+(\\.\\d+)?$",
+          "type": "regex"
+        }
+      ],
+      "excel_columns": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ]
+    },
+    "setup_change_format": {
+      "label": "Set-up Change 格式与关联校验",
+      "message": "Set-up Change 校验失败",
+      "rules": [
+        {
+          "message": "格式: Location:Price,Location:Price 如 Front:35,Center:36",
+          "pattern": "^(\\w+):(\\d+(\\.\\d+)?)(\\s*,\\s*\\w+:\\d+(\\.\\d+)?)*$",
+          "type": "regex"
+        },
+        {
+          "message": "Set-up Change 中的位置必须属于 Imprint Location 已选的位置",
+          "separator": [
+            ",",
+            ",",
+            ", "
+          ],
+          "type": "location_subset_of",
+          "depends_on": "Imprint Location"
+        }
+      ],
+      "excel_columns": [
+        "Set-up Change"
+      ]
+    },
+    "product_type_check": {
+      "label": "Product Type 校验",
+      "excel_columns": [
+        "Product_Type",
+        "Product Type",
+        "What type of product are you entering?"
+      ],
+      "rules": [
+        {
+          "type": "in_options",
+          "options_key": "product_type",
+          "message": "Product Type 值不在合法选项中"
+        }
+      ],
+      "message": "Product Type 校验失败"
+    }
+  },
+  "select_size": {
+    "label": "Select Size",
+    "description": "ASI platform size type dropdown options",
+    "options": [
+      "None",
+      "Dimension(L,W,H)",
+      "Capacity (GB, MB)",
+      "Volume (oz,lb)",
+      "Other - (one size, custom)",
+      "Apparel-Standard & Numbered - (S,M,L,10,12)",
+      "Apparel-Mens/Tall",
+      "Apparel-Womens/Tall",
+      "Apparel-Boys",
+      "Apparel-Girls",
+      "Apparel-Youth",
+      "Apparel - Bra (32C)",
+      "Apparel - Hosiery/Uniform (A, AB)",
+      "Apparel - Infant/Toddler (3 Months, 2T)",
+      "Apparel - Dress Shirts (15-15 1/2)",
+      "Apparel - Pants (32-32)"
+    ],
+    "excel_column": "Select Size"
+  },
+  "imprint_location": {
+    "label": "Imprint Location",
+    "multi": true,
+    "description": "ASI platform imprint location options (multi-select)",
+    "options": [
+      "Back",
+      "Center",
+      "Front",
+      "Top",
+      "Barrel",
+      "Bottom"
+    ],
+    "excel_column": "Imprint Location"
+  },
+  "artwork_information": {
+    "label": "Artwork Information",
+    "multi": true,
+    "description": "ASI platform artwork information options (multi-select with optional comments)",
+    "options": [
+      {
+        "value": "1",
+        "label": "Virtual Proof"
+      },
+      {
+        "value": "2",
+        "label": "Paper Proof"
+      },
+      {
+        "value": "3",
+        "label": "Art Services"
+      },
+      {
+        "value": "4",
+        "label": "Pre-production Proof"
+      }
+    ],
+    "excel_column": "Artwork Information"
+  }
+}

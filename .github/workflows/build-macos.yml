@@ -1,0 +1,53 @@
+name: Build macOS App
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mac_version/**"
+      - ".github/workflows/build-macos.yml"
+
+jobs:
+  build:
+    name: Build ASI macOS app
+    runs-on: macos-14
+
+    defaults:
+      run:
+        working-directory: mac_version
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install PySide6 pandas openpyxl DrissionPage loguru "cryptography>=42,<44" "pyinstaller>=6,<7"
+
+      - name: Run tests
+        run: python -B -m unittest discover -s tests -v
+
+      - name: Build app
+        run: pyinstaller asi_upload_mac.spec --clean --noconfirm
+
+      - name: Zip app bundle
+        run: |
+          APP_PATH="$(find dist -maxdepth 1 -name '*.app' -print -quit)"
+          if [ -z "$APP_PATH" ]; then
+            echo "No .app bundle found in dist/"
+            exit 1
+          fi
+          ditto -c -k --sequesterRsrc --keepParent "$APP_PATH" "dist/ASI-product-upload-macOS.zip"
+
+      - name: Upload macOS app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ASI-product-upload-macOS
+          path: mac_version/dist/ASI-product-upload-macOS.zip
+          if-no-files-found: error
