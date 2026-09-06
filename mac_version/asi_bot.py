@@ -1798,8 +1798,17 @@ return (function () {
         return charges
 
     @staticmethod
+    def _path_stem(path_value):
+        """跨平台提取文件名主干（macOS 上 Path 不解析 Windows 反斜杠路径）。"""
+        text = safe_str(path_value).replace("\\", "/")
+        name = text.rsplit("/", 1)[-1]
+        if "." in name:
+            return name.rsplit(".", 1)[0]
+        return name
+
+    @staticmethod
     def media_colors_from_name(image_file, available_colors=None):
-        stem = safe_str(Path(image_file).stem)
+        stem = AsiBot._path_stem(image_file)
         if not stem or not available_colors:
             return []
         text = normalize_punctuation(stem).lower()
@@ -1846,7 +1855,7 @@ return (function () {
     def media_tags_for_files(image_files, available_colors=None):
         tags = []
         for image_file in image_files or []:
-            stem = safe_str(Path(image_file).stem)
+            stem = AsiBot._path_stem(image_file)
             if stem:
                 item = {"stem": stem}
                 colors = AsiBot.media_colors_from_name(image_file, available_colors)
