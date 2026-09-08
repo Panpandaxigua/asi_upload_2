@@ -6,9 +6,7 @@ import ctypes
 import hashlib
 import json
 import os
-import platform
 import re
-import socket
 import subprocess
 import sys
 import time
@@ -150,13 +148,15 @@ class LicenseManager:
         return "IOPLATFORMUUID_NOT_FOUND"
 
     def _get_macos_stable_hardware_info(self) -> str:
+        """macOS 硬件指纹只依赖主板级 IOPlatformUUID。
+
+        它出厂固定且每台机器唯一，不随电脑名称修改、macOS 版本升级
+        或 Rosetta/x86_64 运行方式变化，保证同一台 Mac 的硬件码永远稳定。
+        """
         io_uuid = self._get_macos_ioplatform_uuid()
-        hostname = socket.gethostname() or "HOSTNAME_NOT_FOUND"
-        machine = platform.machine() or "MACHINE_NOT_FOUND"
-        mac_version = platform.mac_ver()[0] or "MAC_VERSION_NOT_FOUND"
         return (
             f"PRODUCT:{self.config.safe_product_id()}|PLATFORM:macOS|"
-            f"IOPLATFORMUUID:{io_uuid}|HOST:{hostname}|MACHINE:{machine}|MACOS:{mac_version}"
+            f"IOPLATFORMUUID:{io_uuid}"
         )
 
     def _get_windows_machine_guid(self):

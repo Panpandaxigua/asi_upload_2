@@ -36,6 +36,28 @@ class MacPlatformSupportTests(unittest.TestCase):
         self.assertIn("PLATFORM:macOS", hardware_info)
         self.assertIn("IOPLATFORMUUID:ABCDEF12-3456-7890-ABCD-EF1234567890", hardware_info)
 
+    def test_macos_hardware_code_is_stable_across_hostname_machine_and_os_changes(self):
+        """改名、切换 CPU 架构或升级 macOS 都不能让同一台 Mac 的硬件码变化。"""
+        uuid_line = '    "IOPlatformUUID" = "ABCDEF12-3456-7890-ABCD-EF1234567890"\n'
+        scenarios = [
+            ("Renamed-MacBook.local", "arm64", "14.5.0"),
+            ("Renamed-MacBook-2.local", "arm64", "15.2.0"),
+            ("Any-Machine.local", "x86_64", "26.0.0"),
+        ]
+        codes = []
+        for hostname, machine, mac_version in scenarios:
+            completed = Mock(stdout=uuid_line)
+            with patch("license_manager.sys.platform", "darwin"), \
+                 patch("license_manager.subprocess.run", return_value=completed), \
+                 patch("socket.gethostname", return_value=hostname), \
+                 patch("platform.machine", return_value=machine), \
+                 patch("platform.mac_ver", return_value=(mac_version, "", "")):
+                manager = LicenseManager(storage_base=tempfile.gettempdir())
+                codes.append(manager.generate_hardware_code())
+
+        self.assertTrue(codes[0])
+        self.assertEqual(len(set(codes)), 1)
+
     def test_ui_detects_standard_macos_chrome_path(self):
         chrome_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
