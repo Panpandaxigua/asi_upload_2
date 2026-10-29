@@ -248,6 +248,84 @@ def fill_select_by_value(tab, locator, value):
     return False
 
 
+def fill_categories_modal(tab, values, timeout=15):
+    """Select exact category names through the site's checkbox/Apply workflow.
+
+    Slash is part of names such as TRAVEL MUGS/CUPS, not a separator.
+    Fail explicitly so an unclassified product is not silently submitted.
+    """
+    names = split_multi_value(values, seps=(",", ";", "|")) if isinstance(values, str) else values
+    names = list(dict.fromkeys(str(name).strip() for name in names if str(name).strip()))
+    if not names:
+        return False
+
+    script = r"""
+        const action = arguments[0], names = JSON.parse(arguments[1]);
+        const visible = el => !!(el && el.getClientRects().length);
+        const norm = s => String(s || '').trim().replace(/\s+/g, ' ').toLowerCase();
+        const modal = document.getElementById('allCategoriesModal');
+        if (action === 'open') {
+            if (visible(modal)) return 'ok';
+            const button = Array.from(document.querySelectorAll('button')).find(
+                el => visible(el) && norm(el.textContent) === 'choose a category');
+            if (!button || button.disabled) return 'Choose a Category 按钮不存在或不可用';
+            button.click();
+            return 'ok';
+        }
+        if (action === 'closed') return !visible(modal) ? 'ok' : 'wait';
+        if (!visible(modal)) return 'wait';
+        const rows = Array.from(modal.querySelectorAll('.control-group-categories-ck'));
+        const matches = names.map(name => rows.filter(row =>
+            norm(row.querySelector('span')?.textContent) === norm(name)));
+        if (matches.some(items => items.length > 1)) return '分类名称存在重复匹配';
+        if (matches.some(items => items.length === 0)) {
+            const more = Array.from(modal.querySelectorAll('a')).find(
+                el => visible(el) && norm(el.textContent) === 'see more categories');
+            if (more && action === 'select') more.click();
+            return 'wait';
+        }
+        const boxes = matches.map(items => items[0].querySelector('input[type="checkbox"]'));
+        if (boxes.some(box => !box)) return '分类复选框不存在';
+        if (action === 'select') {
+            // Preserve existing selections; respect limits enforced by the website.
+            for (const box of boxes) {
+                if (box.checked) continue;
+                if (box.disabled) return '分类不可选，可能已达到网站分类数量上限';
+                box.click();
+            }
+            return 'ok';
+        }
+        if (boxes.some(box => !box.checked)) return 'wait';
+        if (action === 'apply') {
+            const button = Array.from(modal.querySelectorAll('button')).find(
+                el => visible(el) && norm(el.textContent) === 'apply');
+            if (!button || button.disabled) return 'Apply 按钮不存在或不可用';
+            button.click();
+        }
+        return 'ok';
+    """
+
+    def wait_for(action):
+        deadline = time.monotonic() + timeout
+        while True:
+            result = tab.run_js(script, action, json.dumps(names, ensure_ascii=False))
+            if result == 'ok':
+                return
+            if result != 'wait':
+                raise RuntimeError(f"分类选择失败: {result}; Category={names}")
+            if time.monotonic() >= deadline:
+                raise RuntimeError(f"分类选择超时 ({action})，请检查分类名称及弹窗状态: {names}")
+            time.sleep(0.2)
+
+    wait_for('open')
+    wait_for('select')
+    wait_for('verify')
+    wait_for('apply')
+    wait_for('closed')
+    logger.info(f"  分类已勾选并应用: {names}")
+    return True
+
+
 def fill_token_input(tab, token_input_id, values):
     """
     填充 token-input 字段（标签输入框）

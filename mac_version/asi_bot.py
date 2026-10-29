@@ -28,7 +28,7 @@ from upload_controls import (
 from tools import (
     safe_str, split_multi_value, normalize_punctuation, is_nan,
     fill_input, fill_textarea, fill_select_by_text,
-    fill_token_input, fill_field_js,
+    fill_token_input, fill_field_js, fill_categories_modal,
     click_by_js, click_tab, click_save_button,
     wait_and_handle_alert, read_excel, write_result_to_excel,
     get_product_image_folder, iter_image_files,
@@ -2337,7 +2337,7 @@ return (function () {
         cat = safe_str(row.get("Category", ""))
         if cat:
             logger.info(f"  设置分类: {cat}")
-            fill_token_input(self.tab, "productCategories-Supplier", cat)
+            fill_categories_modal(self.tab, cat)
 
         kw = safe_str(row.get("Keywords", ""))
         if kw:

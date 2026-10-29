@@ -28,13 +28,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install PySide6 pandas openpyxl DrissionPage loguru "cryptography>=42,<44" "pyinstaller>=6,<7"
+          python -m pip install uv
+          uv sync --locked --group build
 
       - name: Run tests
-        run: python -B -m unittest discover -s tests -v
+        run: uv run --locked python -B -m unittest discover -s tests -v
 
       - name: Build app
-        run: pyinstaller asi_upload_mac.spec --clean --noconfirm
+        run: uv run --locked pyinstaller asi_upload_mac.spec --clean --noconfirm
 
       - name: Zip app bundle
         run: |
