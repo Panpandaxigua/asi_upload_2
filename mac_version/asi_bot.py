@@ -382,6 +382,86 @@ class AsiBot:
             return [payload]
         return []
 
+    def collect_live_category_catalog(self, timeout=30):
+        """Read the current category catalog from the new category modal without applying it."""
+        if not self.tab:
+            raise RuntimeError("浏览器尚未启动。")
+        self._navigate_field_scan_tab("#/product/info", "product-info-view")
+        script = r"""
+return (function () {
+  const visible = el => !!(el && (el.offsetParent || el.getClientRects().length));
+  const clean = value => String(value || '').trim().replace(/\s+/g, ' ');
+  const norm = value => clean(value).toLowerCase();
+  const modal = document.getElementById('allCategoriesModal');
+  if (!visible(modal)) {
+    const button = Array.from(document.querySelectorAll('button')).find(el =>
+      visible(el) && norm(el.textContent) === 'choose a category');
+    if (!button || button.disabled) {
+      return {state:'error', message:'Choose a Category 按钮不存在或不可用'};
+    }
+    button.click();
+    return {state:'opening'};
+  }
+  const more = Array.from(modal.querySelectorAll('a')).find(el =>
+    visible(el) && norm(el.textContent) === 'see more categories');
+  if (more) {
+    more.click();
+    return {state:'opening_all'};
+  }
+  const search = Array.from(modal.querySelectorAll('input')).find(el =>
+    visible(el) && norm(el.getAttribute('placeholder')) === 'search categories');
+  if (!search) return {state:'waiting_search'};
+  if (clean(search.value)) {
+    const context = window.ko && ko.contextFor(search);
+    const root = context && context.$root;
+    if (root && typeof root.categorySearchTerm === 'function') root.categorySearchTerm('');
+    const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+    if (setter && setter.set) setter.set.call(search, '');
+    else search.value = '';
+    search.dispatchEvent(new Event('input', {bubbles:true}));
+    search.dispatchEvent(new Event('change', {bubbles:true}));
+    return {state:'clearing_search'};
+  }
+  const categories = Array.from(modal.querySelectorAll('.control-group-categories-ck span'))
+    .map(el => clean(el.textContent)).filter(Boolean);
+  return {state:'ready', categories:categories};
+})();
+        """
+        close_script = r"""
+var modal = document.getElementById('allCategoriesModal');
+if (!modal || !(modal.offsetParent || modal.getClientRects().length)) return true;
+var close = modal.querySelector('.modal-header button.close, .modal-header .close');
+if (!close) return false;
+close.click();
+return true;
+        """
+        deadline = time.monotonic() + timeout
+        last_count = -1
+        stable_checks = 0
+        try:
+            while time.monotonic() < deadline:
+                state = self._run_js_safe(script) or {}
+                if state.get("state") == "error":
+                    raise RuntimeError(state.get("message") or "分类弹窗不可用。")
+                if state.get("state") == "ready":
+                    categories = self._unique_lookup_values(state.get("categories") or [])
+                    count = len(categories)
+                    if count > 0 and count == last_count:
+                        stable_checks += 1
+                    else:
+                        stable_checks = 0
+                        last_count = count
+                    if count > 0 and stable_checks >= 1:
+                        logger.info(f"候选值更新：category 从分类弹窗读取 {count} 项。")
+                        return categories
+                time.sleep(0.5)
+            raise RuntimeError("分类弹窗未能在规定时间内加载全部分类。")
+        finally:
+            try:
+                self._run_js_safe(close_script)
+            except Exception as exc:
+                logger.warning(f"字段更新：关闭分类弹窗失败: {exc}")
+
     def collect_live_option_catalog(self):
         """Read ASI-controlled candidate values from lookup APIs declared by its JS bundle."""
         endpoints = {
@@ -396,6 +476,12 @@ class AsiBot:
             "select_size": "/api/api/Lookup/sizes",
         }
         catalog = {}
+        try:
+            categories = self.collect_live_category_catalog()
+            if categories:
+                catalog["category"] = categories
+        except Exception as exc:
+            logger.warning(f"候选值更新：category 读取失败，保留原配置: {exc}")
         for key, endpoint in endpoints.items():
             try:
                 payload = self.api_request("GET", endpoint)

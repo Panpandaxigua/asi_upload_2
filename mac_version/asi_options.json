@@ -1,4 +1,10 @@
 {
+  "category": {
+    "label": "Category",
+    "description": "ASI category names collected from Choose a Category > See more categories",
+    "excel_column": "Category",
+    "options": []
+  },
   "product_type": {
     "label": "Product Type",
     "description": "ASI platform product type dropdown options",
@@ -668,6 +674,21 @@
     "excel_column": "Set-up Charge Code"
   },
   "validation_rules": {
+    "category_check": {
+      "label": "Category 校验",
+      "message": "Category 校验失败",
+      "rules": [
+        {
+          "message": "Category 不在网站当前分类中",
+          "options_key": "category",
+          "type": "in_options",
+          "multi": true
+        }
+      ],
+      "excel_columns": [
+        "Category"
+      ]
+    },
     "description_format": {
       "label": "Description 格式",
       "message": "Description 格式错误",
